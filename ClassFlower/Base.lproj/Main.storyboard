@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,12 +19,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVK-bG-r5U">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fVK-bG-r5U">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fVK-bG-r5U" secondAttribute="height" multiplier="1:1" id="mC6-46-cDM"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eKe-aD-H2v">
+                                <rect key="frame" x="16" y="458" width="343" height="189"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fVK-bG-r5U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0vo-0i-27C"/>
+                            <constraint firstItem="eKe-aD-H2v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FgN-kY-dY9"/>
+                            <constraint firstItem="eKe-aD-H2v" firstAttribute="top" secondItem="fVK-bG-r5U" secondAttribute="bottom" constant="19" id="PNY-WO-rjG"/>
+                            <constraint firstItem="fVK-bG-r5U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cPm-BU-2x9"/>
+                            <constraint firstItem="fVK-bG-r5U" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k8m-56-aBz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eKe-aD-H2v" secondAttribute="trailing" constant="16" id="ony-Qi-vx5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eKe-aD-H2v" secondAttribute="bottom" constant="20" id="ubJ-Y2-ZmN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="wP2-Gn-x3A">
@@ -35,6 +53,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="displayPhotoImage" destination="fVK-bG-r5U" id="ZZg-ie-anG"/>
+                        <outlet property="label" destination="eKe-aD-H2v" id="CFn-Oh-dKm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,6 +10,7 @@ import UIKit
 import Vision
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -18,6 +19,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var displayPhotoImage: UIImageView!
+    
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +40,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
             detect(image: convertedCIImage)
-        
-            displayPhotoImage.image = userPickedImage
             
         }
         
@@ -76,12 +77,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
             "format" : "json",
             "action" : "query",
-            "prop" : "extracts",
+            "prop" : "extracts|pageimages",
             "exintro" : "",
             "explaintext" : "",
             "titles" : flowerName,
             "indexpageids" : "",
             "redirects" : "1",
+            "pithumbsize" : "500"
             
         ]
         
@@ -90,6 +92,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if response.result.isSuccess {
                 print("Got the wikipedia info")
                 print(response)
+                
+                let flowerJSON : JSON = JSON(response.result.value!)
+                
+                let pageid = flowerJSON["query"]["pageids"][0].stringValue
+                
+                let flowerDescription = flowerJSON["query"]["pages"][pageid]["extract"].stringValue
+                
+                let flowerImageURL = flowerJSON["query"]["pages"][pageid]["thumbnail"]["source"].stringValue
+                
+                self.displayPhotoImage.sd_setImage(with: URL(string: flowerImageURL))
+                self.label.text = flowerDescription
             }
         }
         
