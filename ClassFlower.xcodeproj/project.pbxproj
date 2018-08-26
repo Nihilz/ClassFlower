@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AD10B69F21B111D67B88AED /* Pods_ClassFlower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286125CDF4C1BF2F43F17B9E /* Pods_ClassFlower.framework */; };
 		DC0248992131B76E00073D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0248982131B76E00073D1C /* AppDelegate.swift */; };
 		DC02489B2131B76E00073D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02489A2131B76E00073D1C /* ViewController.swift */; };
 		DC02489E2131B76E00073D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC02489C2131B76E00073D1C /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		286125CDF4C1BF2F43F17B9E /* Pods_ClassFlower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassFlower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		337493F2010CC07F21132424 /* Pods-ClassFlower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassFlower.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClassFlower/Pods-ClassFlower.release.xcconfig"; sourceTree = "<group>"; };
+		598CE0F11739E56890A55118 /* Pods-ClassFlower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassFlower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClassFlower/Pods-ClassFlower.debug.xcconfig"; sourceTree = "<group>"; };
 		DC0248952131B76E00073D1C /* ClassFlower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassFlower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0248982131B76E00073D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC02489A2131B76E00073D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD10B69F21B111D67B88AED /* Pods_ClassFlower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97227CC855C67D6C8669F6ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				286125CDF4C1BF2F43F17B9E /* Pods_ClassFlower.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAA34A9EA0377416B1E362B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				598CE0F11739E56890A55118 /* Pods-ClassFlower.debug.xcconfig */,
+				337493F2010CC07F21132424 /* Pods-ClassFlower.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DC02488C2131B76E00073D1C = {
 			isa = PBXGroup;
 			children = (
 				DC0248972131B76E00073D1C /* ClassFlower */,
 				DC0248962131B76E00073D1C /* Products */,
+				CAA34A9EA0377416B1E362B6 /* Pods */,
+				97227CC855C67D6C8669F6ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC0248A72131B77000073D1C /* Build configuration list for PBXNativeTarget "ClassFlower" */;
 			buildPhases = (
+				DEEAF0BCC09E2E77FF295814 /* [CP] Check Pods Manifest.lock */,
 				DC0248912131B76E00073D1C /* Sources */,
 				DC0248922131B76E00073D1C /* Frameworks */,
 				DC0248932131B76E00073D1C /* Resources */,
+				391B5E3F7441775C16AF8718 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		391B5E3F7441775C16AF8718 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ClassFlower/Pods-ClassFlower-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClassFlower/Pods-ClassFlower-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEEAF0BCC09E2E77FF295814 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClassFlower-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC0248912131B76E00073D1C /* Sources */ = {
@@ -282,6 +349,7 @@
 		};
 		DC0248A82131B77000073D1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 598CE0F11739E56890A55118 /* Pods-ClassFlower.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +368,7 @@
 		};
 		DC0248A92131B77000073D1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 337493F2010CC07F21132424 /* Pods-ClassFlower.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
